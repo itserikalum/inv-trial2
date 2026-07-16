@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Millo & Miji — Wedding Invitation</title>
+<meta name="description" content="Millo & Miji are getting married — Friday, 1 January 2027, The Ritz-Carlton Bali">
+
+<!-- Fonts: Cormorant Garamond (display) + Jost (body/utility) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ribbon signature element: runs the length of the page -->
+<svg class="ribbon-thread" width="6" height="100%" viewBox="0 0 6 100" preserveAspectRatio="none" aria-hidden="true">
+  <path id="ribbonPath" d="M3,0 L3,100" />
+</svg>
+
+<!-- Ambient audio -->
+<audio id="bgm" src="assets/audio/married-life.mp3" loop preload="auto"></audio>
+
+<!-- ===================== GATE / ENVELOPE ===================== -->
+<section id="gate" class="gate">
+  <div class="gate-inner">
+    <p class="eyebrow gate-eyebrow">The Wedding Of</p>
+    <h1 class="gate-names">Millo <span class="amp">&amp;</span> Miji</h1>
+    <div class="gate-divider" aria-hidden="true">
+      <svg viewBox="0 0 120 24" width="120" height="24"><path d="M2,12 C30,2 40,22 60,12 C80,2 90,22 118,12" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    </div>
+    <p class="gate-date">Friday · 01 January 2027</p>
+    <button id="openBtn" class="open-btn">
+      <span class="open-btn-ring"></span>
+      <span class="open-btn-label">Open Invitation</span>
+    </button>
+    <p class="gate-hint">with sound on 🎧</p>
+  </div>
+</section>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<div id="main" class="main" hidden>
+
+  <!-- floating music control -->
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music" aria-pressed="true">
+    <span class="music-bars"><i></i><i></i><i></i></span>
+  </button>
+
+  <!-- nav dot progress could go here later -->
+
+  <!-- ---------- HERO ---------- -->
+  <header class="hero">
+    <div class="hero-img">
+      <img src="assets/images/photo-05.jpg" alt="Millo and Miji embracing on the beach" loading="eager">
+    </div>
+    <div class="hero-caption">
+      <p class="eyebrow">Together With Our Families, We Invite You</p>
+      <h1 class="hero-names">Millo <span class="amp">&amp;</span> Miji</h1>
+      <p class="hero-date">01 . 01 . 2027</p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span></span>
+      <p>scroll</p>
+    </div>
+  </header>
+
+  <!-- ---------- GREETING ---------- -->
+  <section class="section greeting">
+    <p class="eyebrow center">Our Story</p>
+    <p class="greeting-text">
+      Like a quiet melody that grows fuller with every verse, our story began in small,
+      ordinary moments — and slowly became the song we want to spend the rest of our lives
+      dancing to. We would be so honored to have you beside us as we begin our married life.
+    </p>
+    <div class="signature-line">
+      <span class="initial">M</span>
+      <svg class="knot" viewBox="0 0 40 16" width="40" height="16" aria-hidden="true">
+        <path d="M2,8 C10,-2 14,18 20,8 C26,-2 30,18 38,8" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="initial">M</span>
+    </div>
+  </section>
+
+  <!-- ---------- COUPLE ---------- -->
+  <section class="section couple">
+    <p class="eyebrow center">The Couple</p>
+    <figure class="couple-single">
+      <div class="couple-single-photo"><img src="assets/images/photo-06.jpg" alt="Millo and Miji" loading="lazy"></div>
+      <figcaption>
+        <div class="couple-single-name">
+          <h3>Millo</h3>
+          <p>Groom</p>
+        </div>
+        <div class="couple-amp" aria-hidden="true">&amp;</div>
+        <div class="couple-single-name">
+          <h3>Miji</h3>
+          <p>Bride</p>
+        </div>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ---------- COUNTDOWN ---------- -->
+  <section class="section countdown-section">
+    <p class="eyebrow center light">Counting Down To Forever</p>
+    <div id="countdown" class="countdown" aria-live="polite">
+      <div class="count-block"><span id="cd-days">00</span><small>Days</small></div>
+      <div class="count-sep">:</div>
+      <div class="count-block"><span id="cd-hours">00</span><small>Hours</small></div>
+      <div class="count-sep">:</div>
+      <div class="count-block"><span id="cd-minutes">00</span><small>Minutes</small></div>
+      <div class="count-sep">:</div>
+      <div class="count-block"><span id="cd-seconds">00</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- ---------- EVENT DETAILS ---------- -->
+  <section class="section events">
+    <p class="eyebrow center">Save The Date</p>
+    <h2 class="section-title">Friday, 1st January 2027</h2>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <span class="event-tag">01</span>
+        <h3>Holy Matrimony</h3>
+        <p class="event-time">10.00 AM WITA</p>
+        <p class="event-venue">The Ritz-Carlton Bali</p>
+        <p class="event-address">Jl. Raya Nusa Dua Selatan, Benoa, Kec. Kuta Sel.,<br>Kabupaten Badung, Bali 80361</p>
+        <a class="map-btn" href="https://maps.app.goo.gl/naEbpPFbBXK2rrMC6" target="_blank" rel="noopener">View Location</a>
+      </div>
+
+      <div class="event-divider" aria-hidden="true">
+        <svg viewBox="0 0 16 120" width="16" height="120"><path d="M8,2 C-2,30 18,40 8,60 C-2,80 18,90 8,118" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+
+      <div class="event-card">
+        <span class="event-tag">02</span>
+        <h3>Reception</h3>
+        <p class="event-time">6.00 PM WITA</p>
+        <p class="event-venue">The Ritz-Carlton Bali</p>
+        <p class="event-address">Jl. Raya Nusa Dua Selatan, Benoa, Kec. Kuta Sel.,<br>Kabupaten Badung, Bali 80361</p>
+        <a class="map-btn" href="https://maps.app.goo.gl/naEbpPFbBXK2rrMC6" target="_blank" rel="noopener">View Location</a>
+      </div>
+    </div>
+
+    <div class="dress-code">
+      <p class="eyebrow center light">Dress Code</p>
+      <p class="dress-desc">Soft blues, ivory, and neutral tones — please avoid pure white.</p>
+      <div class="palette-swatches" aria-hidden="true">
+        <span style="background:#FDFBF6"></span>
+        <span style="background:#EFE6D8"></span>
+        <span style="background:#B7CBDD"></span>
+        <span style="background:#5E7B99"></span>
+        <span style="background:#22405E"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- GALLERY ---------- -->
+  <section class="section gallery">
+    <p class="eyebrow center">Moments Before Forever</p>
+    <div class="gallery-grid">
+      <div class="g-item g-tall"><img src="assets/images/photo-01.jpg" loading="lazy" alt="Prewedding photo"></div>
+      <div class="g-item"><img src="assets/images/photo-04.jpg" loading="lazy" alt="Prewedding photo"></div>
+      <div class="g-item"><img src="assets/images/photo-08.jpg" loading="lazy" alt="Prewedding photo"></div>
+      <div class="g-item g-tall"><img src="assets/images/photo-03.jpg" loading="lazy" alt="Prewedding photo"></div>
+      <div class="g-item g-wide"><img src="assets/images/photo-02.jpg" loading="lazy" alt="Prewedding photo"></div>
+    </div>
+  </section>
+
+  <!-- ---------- RSVP ---------- -->
+  <section class="section rsvp">
+    <p class="eyebrow center light">Kindly Respond</p>
+    <h2 class="section-title light">RSVP</h2>
+    <p class="rsvp-note">We would love to know if you'll be joining us — please respond by 1 December 2026.</p>
+
+    <form id="rsvpForm" class="rsvp-form">
+      <label class="field">
+        <span>Name</span>
+        <input type="text" name="name" id="rsvpName" required placeholder="Your full name">
+      </label>
+
+      <label class="field">
+        <span>Confirmation of Attendance</span>
+        <select name="attendance" id="rsvpAttendance" required>
+          <option value="" disabled selected>Please choose one</option>
+          <option value="Yes, Holy Matrimony & Reception">Yes, Holy Matrimony &amp; Reception</option>
+          <option value="Yes, Holy Matrimony only">Yes, Holy Matrimony only</option>
+          <option value="Yes, Reception only">Yes, Reception only</option>
+          <option value="Unable to attend">Unable to attend</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Number of Guests</span>
+        <select name="guests" id="rsvpGuests" required>
+          <option value="" disabled selected>Select</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Message for Millo &amp; Miji</span>
+        <textarea name="message" id="rsvpMessage" rows="4" placeholder="Leave your wishes for the couple..."></textarea>
+      </label>
+
+      <button type="submit" class="submit-btn" id="rsvpSubmit">
+        <span class="btn-label">Send RSVP</span>
+      </button>
+      <p id="rsvpStatus" class="rsvp-status" role="status"></p>
+    </form>
+
+    <div class="wishes">
+      <p class="eyebrow center light">Wishes From Family &amp; Friends</p>
+      <div id="wishesList" class="wishes-list">
+        <p class="wishes-empty">Be the first to leave a message 💌</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- GIFT ---------- -->
+  <section class="section gift">
+    <p class="eyebrow center">A Gift Of Love</p>
+    <h2 class="section-title">Wedding Gift</h2>
+    <p class="gift-desc">
+      Your presence is the greatest gift of all. Should you wish to honor us further,
+      a small token of your love would be cherished.
+    </p>
+
+    <div class="gift-grid">
+      <div class="gift-card">
+        <h3>E-Gift</h3>
+        <p class="gift-bank">Bank Transfer</p>
+        <p class="gift-account">123456789</p>
+        <p class="gift-name">a/n Millo Miji</p>
+        <button class="copy-btn" id="copyAccount" data-value="123456789">Copy Account Number</button>
+      </div>
+      <div class="gift-card">
+        <h3>Gift Registry</h3>
+        <p class="gift-registry-desc">Prefer to send something from the heart? Our registry is just a click away.</p>
+        <a class="registry-btn" href="https://docs.google.com/spreadsheets/d/1ST-H1cVT9ir3-unV6EFb3QH7vXkJVaQb41IZS66UIzY/edit?usp=sharing" target="_blank" rel="noopener">View Registry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- CLOSING ---------- -->
+  <footer class="closing">
+    <div class="closing-img"><img src="assets/images/photo-04.jpg" alt="Millo and Miji" loading="lazy"></div>
+    <p class="eyebrow center light">With Love</p>
+    <h2 class="closing-names">Millo <span class="amp">&amp;</span> Miji</h2>
+    <p class="closing-text">Thank you for being part of our story.<br>We can't wait to celebrate with you.</p>
+    <div class="closing-divider" aria-hidden="true">
+      <svg viewBox="0 0 120 24" width="120" height="24"><path d="M2,12 C30,2 40,22 60,12 C80,2 90,22 118,12" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ====== EDIT THIS ONE LINE ======
+     Paste your Google Apps Script Web App URL below (see README.md).
+     Example: "https://script.google.com/macros/s/AKfycb.../exec" -->
+<script>
+  const SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
